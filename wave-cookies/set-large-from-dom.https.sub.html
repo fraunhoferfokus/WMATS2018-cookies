@@ -5,7 +5,7 @@
   <title>Set large cookies from `document.cookie` on a secure page</title>
   <script src="/resources/testharness.js"></script>
   <script src="/resources/testharnessreport.js"></script>
-  <script src="/cookies/resources/testharness-helpers.js"></script>
+  <script src="resources/testharness-helpers.js"></script>
 </head>
 <body>
 <div id=log></div>
@@ -29,7 +29,7 @@
         document.cookie = "4026_bytes_from_secure_dom=" + value + "; path=/";
         var regex = new RegExp('4026_bytes_from_secure_dom=' + value);
         assert_not_equals(document.cookie.match(regex), null);
-        fetch("https://{{host}}:{{ports[https][0]}}/cookies/resources/echo-json.py",
+        fetch("https://{{host}}:{{ports[https][0]}}/wave-cookies/resources/echo-json.py",
               { "credentials": "include" })
           .then(this.step_func(function (r) {
             return r.json();
@@ -57,7 +57,7 @@
         document.cookie = "5000_bytes_from_secure_dom=" + value + "; path=/";
         var regex = new RegExp('5000_bytes_from_secure_dom=' + value);
         assert_not_equals(document.cookie.match(regex), null);
-        fetch("https://{{host}}:{{ports[https][0]}}/cookies/resources/echo-json.py",
+        fetch("https://{{host}}:{{ports[https][0]}}/wave-cookies/resources/echo-json.py",
               { "credentials": "include" })
           .then(this.step_func(function (r) {
             return r.json();
@@ -85,7 +85,7 @@
         document.cookie = "4096_bytes_from_secure_dom=" + value + "; path=/";
         var regex = new RegExp('4096_bytes_from_secure_dom=' + value);
         assert_not_equals(document.cookie.match(regex), null);
-        fetch("https://{{host}}:{{ports[https][0]}}/cookies/resources/echo-json.py",
+        fetch("https://{{host}}:{{ports[https][0]}}/wave-cookies/resources/echo-json.py",
               { "credentials": "include" })
           .then(this.step_func(function (r) {
             return r.json();
