@@ -16,8 +16,9 @@
     setup({ explicit_timeout: true });
 
     (function() {
-    document.getElementById("resumeLink").setAttribute("href", getSessionURL("/test.html"));
-    document.getElementById("resumeLink").innerHTML = getSessionURL("/test.html");
+    const nextUrl = getSessionURL("/test.html");
+    document.getElementById("resumeLink").setAttribute("href", nextUrl);
+    document.getElementById("resumeLink").innerHTML = nextUrl;
     })();
 
     const TEST_CASE = {file: "persistence_application", value: "persistence_application_test"};
