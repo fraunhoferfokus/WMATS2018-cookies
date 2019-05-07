@@ -24,17 +24,17 @@
       }
     };
 
-    var recievedResponsNumber = 0;
-    var successfullyWritedCookiesNumber = 0;
+    var receivedResponsNumber = 0;
+    var successfullySettedCookies = 0;
     window.addEventListener('message', function(e) {
-      recievedResponsNumber ++;
+      receivedResponsNumber ++;
       var message = e.data;
       if(e.data == true){
-        successfullyWritedCookiesNumber = recievedResponsNumber * 20;
+        successfullySettedCookies = receivedResponsNumber * 20;
       }
-      if(recievedResponsNumber == 5){
+      if(receivedResponsNumber == 5){
         test(function () {
-          assert_equals(successfullyWritedCookiesNumber, 100);
+          assert_equals(successfullySettedCookies, 100);
         }, "Devices support at least 100 total cookies");
         done();
       }
