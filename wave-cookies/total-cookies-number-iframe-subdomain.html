@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset=utf-8>
-  <title>Devices support at least 100 total cookies</title>
+  <title>Devices support at least 100 total cookies set up using iFrames with 5 different subdomains and 20 cookies each</title>
   <script src="/resources/testharness.js"></script>
   <script src="/resources/testharnessreport.js"></script>
   <script src="resources/testharness-helpers.js"></script>
@@ -35,7 +35,7 @@
       if(receivedResponsNumber == 5){
         test(function () {
           assert_equals(successfullySettedCookies, 100);
-        }, "Devices support at least 100 total cookies");
+        }, "Devices support at least 100 total cookies set up using iFrames with 5 different subdomains and 20 cookies each");
         done();
       }
     });
